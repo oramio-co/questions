@@ -1,5 +1,127 @@
+@import url("https://use.typekit.net/zft7xwb.css");
+@import url("https://use.typekit.net/zft7xwb.css");
+
+/* Remove initial padding and margin. Set default background color. */
 html,
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set font to Open Sans. */
+body {
+  font-family: open-sans, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Center content horizontally and vertically. */
+.container {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #F4FAFF;
+}
+
+/* Adjust container at large viewports. */
+@media screen and (min-width: 1200px) {
+  .container {
+    margin: 0 auto;
+    box-shadow: 0 0 5px 5px rgba(68, 68, 68, 0.452);
+    width: 75%;
+  }
+}
+
+/* Set font and margin for title text. */
+.title {
+  font-family: noto-sans, sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  margin-bottom: 3rem;
+}
+
+/* Set font for the rest of the text. Add a border and shadow. */
+.content {
+  text-transform: capitalize;
+  width: 90%;
+  margin-bottom: 1rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 5px 5px 2px rgba(58, 58, 58, 0.575); 
+}
+
+/* Adjust the width of the questions at various viewport sizes. */
+@media screen and (min-width: 600px) {
+  .content {
+    width: 75%;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .content {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .content {
+    width: 35%;
+  }
+}
+
+/* Adjust spacing for question title text and button. */
+.question-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.question-title p {
+  margin-left: 1rem;
+}
+
+/* Adjust appearance for buttons. Add transition details. */
+.question-btn {
+  background: transparent;
+  border-color: transparent;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  margin-right: 1rem;
+  transition: all .4s linear;
+}
+
+/* Add rotation on hover. */
+.question-btn:hover {
+  transform: rotate(90deg);
+}
+
+/* By default, minus button will be hidden. */
+.btn-minus {
+  display: none;
+}
+
+/* By default, question text will be hidden. */
+.question-text {
+  display: none;
+  margin: 0 1rem 1rem;
+  padding-top: .6rem;
+  border-top: 3px solid rgba(0, 0, 0, 0.2);
+  text-transform: none;
+}
+
+/* On button toggle, will show question-text. */
+.show-text .question-text {
+  display: inherit;
+}
+
+/* On button toggle, will hide plus button. */
+.show-text .btn-plus {
+  display: none;
+}
+
+/* On button toggle, will show minus button to toggle again. */
+.show-text .btn-minus {
+  display: inline;
 }
